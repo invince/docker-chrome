@@ -8,7 +8,7 @@ RUN wget -q https://dl.google.com/linux/direct/google-chrome-stable_current_amd6
 RUN apt-get install -y ./google-chrome-stable_current_amd64.deb
 
 # Copy the start script.
-COPY startapp.sh /startapp.sh
+COPY --chmod=755 startapp.sh /startapp.sh
 
 # Set the name of the application.
 RUN set-cont-env APP_NAME "Chrome"
